@@ -4,9 +4,9 @@ Version 2023-01-13 v1.0
 
 ## Presentation
 
-This package defines the colors defined in the [https://yeun.github.io/open-color/](open color)
+This package defines the colors defined in the [open color](https://yeun.github.io/open-color/)
 (version 1.9.1)
-to be used as colors using the [https://www.ctan.org/pkg/xcolor](xcolor) package.
+to be used as colors using the [xcolor](https://www.ctan.org/pkg/xcolor) package.
 
 ## Licence 
 
