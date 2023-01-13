@@ -1,0 +1,315 @@
+% \iffalse meta-comment
+%
+% 
+% MIT License
+% 
+% Copyright (c) 2016 heeyeun for the color palette; 
+% Copyright (c) 2023 Antoine Lejay for the LaTeX code and documentation
+% 
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+% 
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+% 
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+%
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{open-color-palette.dtx}
+%</driver>
+%<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<package>\ProvidesPackage{open-color-palette}
+%<*package>
+    [2023/01/13 v1.0 Open Color palette]
+%</package>
+%
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{open-color-palette}[2023/01/13]
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{etoolbox}
+\usepackage{url}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\newcommand{\setcolor}[1]{\xdef\colortotest{#1}}
+\newcommand{\onesample}[1]{\testcolor{\colortotest#1}}
+\newcommand{\gradation}[1]{%
+    \pagebreak[3]
+    \begin{minipage}{\textwidth}
+	\center
+    \centerline{\textbf{\uppercase{#1}}}
+    \begin{testcolors}[rgb,HTML,gray]
+    \setcolor{#1}
+    \forcsvlist{\onesample}{0,1,2,3,4,5,6,7,8,9}
+\end{testcolors}
+\end{minipage}
+\bigskip
+}
+\begin{document}
+  \DocInput{open-color-palette.dtx}
+  \PrintChanges
+  \PrintIndex
+\end{document}
+%</driver>
+% \fi
+%
+% \CheckSum{131}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+%
+%% \changes{<+version+>}{<+date+>}{Converted to DTX file}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+%
+% \GetFileInfo{open-color-palette.dtx}
+% \title{The \textsf{open-color-palette} package:\\
+% implementing a nice, harmonious, and open-source color scheme}
+% \author{Code and documentation by Antoine Lejay \\ \url{Antoine.Lejay@univ-lorraine.fr}}
+% \date{\fileversion~from \filedate}
+%
+% \maketitle
+%
+%
+% \section{Introduction}
+%
+% This package implements the colors specified by the \emph{Open Color} scheme (version 1.9.1),
+% which is a consistent, open-source color schemes defined in the web site
+% \url{https://yeun.github.io/open-color/}. 
+%
+% The palette is under MIT licence so is this code.
+%
+% \section{Usage}
+%
+% This package uses \verb|xcolor|. The colors are defined through their HTML code.
+% They are just to be called by their names, that is \emph{gray2}, \emph{orange3}, and so on.
+%
+% The colors are gray, red, pink, grape, violet, indigo, blue, cyan, teal, green, lime, 
+% yellow and orange, followed by a digit between 0 and 9.
+%
+% \section{The palette}
+%
+% \begin{empty}
+% \forcsvlist{\gradation}{gray,red,pink,grape,violet,indigo,blue,cyan,teal,green,lime,yellow,orange}
+% \end{empty}
+%
+% \StopEventually{}
+%
+% \section{Implementation}
+%
+% \iffalse
+%<*package>
+% \fi
+%    \begin{macrocode}
+\RequirePackage{xcolor}
+%    \end{macrocode}
+%
+%%% open colors https://yeun.github.io/open-color/
+%
+% \subsection{Gray}
+%    \begin{macrocode}
+\providecolor{gray0}{HTML}{f8f9fa}
+\providecolor{gray1}{HTML}{f1f3f5}  
+\providecolor{gray2}{HTML}{e9ecef}  
+\providecolor{gray3}{HTML}{dee2e6}  
+\providecolor{gray4}{HTML}{ced4da}  
+\providecolor{gray5}{HTML}{adb5bd}  
+\providecolor{gray6}{HTML}{868e96}  
+\providecolor{gray7}{HTML}{495057}  
+\providecolor{gray8}{HTML}{343a40}  
+\providecolor{gray9}{HTML}{212529}  
+%    \end{macrocode}
+% \subsection{Red}
+%    \begin{macrocode}
+\providecolor{red0}{HTML}{fff5f5} 
+\providecolor{red1}{HTML}{ffe3e3} 
+\providecolor{red2}{HTML}{ffc9c9} 
+\providecolor{red3}{HTML}{ffa8a8}
+\providecolor{red4}{HTML}{ff8787}
+\providecolor{red5}{HTML}{ff6b6b} 
+\providecolor{red6}{HTML}{fa5252} 
+\providecolor{red7}{HTML}{f03e3e} 
+\providecolor{red8}{HTML}{e03131}
+\providecolor{red9}{HTML}{c92a2a}
+%    \end{macrocode}
+% \subsection{Pink}
+%    \begin{macrocode}
+\providecolor{pink0}{HTML}{fff0f6}  
+\providecolor{pink1}{HTML}{ffdeeb}  
+\providecolor{pink2}{HTML}{fcc2d7}  
+\providecolor{pink3}{HTML}{faa2c1}  
+\providecolor{pink4}{HTML}{f783ac}  
+\providecolor{pink5}{HTML}{f06595}  
+\providecolor{pink6}{HTML}{e64980}  
+\providecolor{pink7}{HTML}{d6336c}  
+\providecolor{pink8}{HTML}{c2255c}  
+\providecolor{pink9}{HTML}{a61e4d}  
+%    \end{macrocode}
+% \subsection{Grape}
+%    \begin{macrocode}
+\providecolor{grape0}{HTML}{f8f0fc}  
+\providecolor{grape1}{HTML}{f3d9fa}  
+\providecolor{grape2}{HTML}{eebefa}  
+\providecolor{grape3}{HTML}{e599f7}  
+\providecolor{grape4}{HTML}{da77f2}  
+\providecolor{grape5}{HTML}{cc5de8}  
+\providecolor{grape6}{HTML}{be4bdb}  
+\providecolor{grape7}{HTML}{ae3ec9}  
+\providecolor{grape8}{HTML}{9c36b5}  
+\providecolor{grape9}{HTML}{862e9c}  
+%    \end{macrocode}
+% \subsection{Violet}
+%    \begin{macrocode}
+\providecolor{violet0}{HTML}{f3f0ff}
+\providecolor{violet1}{HTML}{e5dbff}
+\providecolor{violet2}{HTML}{d0bfff}
+\providecolor{violet3}{HTML}{b197fc}
+\providecolor{violet4}{HTML}{9775fa}
+\providecolor{violet5}{HTML}{845ef7}
+\providecolor{violet6}{HTML}{7950f2}
+\providecolor{violet7}{HTML}{7048e8}
+\providecolor{violet8}{HTML}{6741d9}
+\providecolor{violet9}{HTML}{5f3dc4}
+%    \end{macrocode}
+% \subsection{Indigo}
+%    \begin{macrocode}
+\providecolor{indigo0}{HTML}{edf2ff} 
+\providecolor{indigo1}{HTML}{dbe4ff} 
+\providecolor{indigo2}{HTML}{bac8ff} 
+\providecolor{indigo3}{HTML}{91a7ff} 
+\providecolor{indigo4}{HTML}{748ffc} 
+\providecolor{indigo5}{HTML}{5c7cfa} 
+\providecolor{indigo6}{HTML}{4c6ef5} 
+\providecolor{indigo7}{HTML}{4263eb} 
+\providecolor{indigo8}{HTML}{3b5bdb} 
+\providecolor{indigo9}{HTML}{364fc7} 
+%    \end{macrocode}
+% \subsection{Blue}
+%    \begin{macrocode}
+\providecolor{blue0}{HTML}{e7f5ff}
+\providecolor{blue1}{HTML}{d0ebff}  
+\providecolor{blue2}{HTML}{a5d8ff}
+\providecolor{blue3}{HTML}{74c0fc}
+\providecolor{blue4}{HTML}{4dabf7}  
+\providecolor{blue5}{HTML}{339af0}
+\providecolor{blue6}{HTML}{228be6}
+\providecolor{blue7}{HTML}{1c7ed6}
+\providecolor{blue8}{HTML}{1971c2}
+\providecolor{blue9}{HTML}{1864ab}
+%    \end{macrocode}
+% \subsection{Cyan}
+%    \begin{macrocode}
+\providecolor{cyan0}{HTML}{e3fafc} 
+\providecolor{cyan1}{HTML}{c5f6fa} 
+\providecolor{cyan2}{HTML}{99e9f2} 
+\providecolor{cyan3}{HTML}{66d9e8} 
+\providecolor{cyan4}{HTML}{3bc9db} 
+\providecolor{cyan5}{HTML}{22b8cf} 
+\providecolor{cyan6}{HTML}{15aabf} 
+\providecolor{cyan7}{HTML}{1098ad} 
+\providecolor{cyan8}{HTML}{0c8599} 
+\providecolor{cyan9}{HTML}{0b7285} 
+%    \end{macrocode}
+% \subsection{Teal}
+%    \begin{macrocode}
+\providecolor{teal0}{HTML}{e6fcf5}  
+\providecolor{teal1}{HTML}{c3fae8}  
+\providecolor{teal2}{HTML}{96f2d7}  
+\providecolor{teal3}{HTML}{63e6be}  
+\providecolor{teal4}{HTML}{38d9a9}  
+\providecolor{teal5}{HTML}{20c997}  
+\providecolor{teal6}{HTML}{12b886}  
+\providecolor{teal7}{HTML}{0ca678}  
+\providecolor{teal8}{HTML}{099268}  
+\providecolor{teal9}{HTML}{087f5b}  
+%    \end{macrocode}
+% \subsection{Green}
+%    \begin{macrocode}
+\providecolor{green0}{HTML}{ebfbee}
+\providecolor{green1}{HTML}{d3f9d8}
+\providecolor{green2}{HTML}{b2f2bb}
+\providecolor{green3}{HTML}{8ce99a}
+\providecolor{green4}{HTML}{69db7c}
+\providecolor{green5}{HTML}{51cf66}
+\providecolor{green6}{HTML}{40c057}
+\providecolor{green7}{HTML}{37b24d}
+\providecolor{green8}{HTML}{2f9e44}
+\providecolor{green9}{HTML}{2b8a3e}
+%    \end{macrocode}
+% \subsection{Lime}
+%    \begin{macrocode}
+\providecolor{lime0}{HTML}{f4fce3}
+\providecolor{lime1}{HTML}{e9fac8}
+\providecolor{lime2}{HTML}{d8f5a2}
+\providecolor{lime3}{HTML}{c0eb75}
+\providecolor{lime4}{HTML}{a9e34b}
+\providecolor{lime5}{HTML}{94d82d}
+\providecolor{lime6}{HTML}{82c91e}
+\providecolor{lime7}{HTML}{74b816}
+\providecolor{lime8}{HTML}{66a80f}
+\providecolor{lime9}{HTML}{5c940d}
+%    \end{macrocode}
+% \subsection{Yellow}
+%    \begin{macrocode}
+\providecolor{yellow0}{HTML}{fff9db}
+\providecolor{yellow1}{HTML}{fff3bf}
+\providecolor{yellow2}{HTML}{ffec99}
+\providecolor{yellow3}{HTML}{ffe066}
+\providecolor{yellow4}{HTML}{ffd43b}
+\providecolor{yellow5}{HTML}{fcc419}
+\providecolor{yellow6}{HTML}{fab005}
+\providecolor{yellow7}{HTML}{f59f00}
+\providecolor{yellow8}{HTML}{f08c00}
+\providecolor{yellow9}{HTML}{e67700}
+%    \end{macrocode}
+% \subsection{Orange}
+%    \begin{macrocode}
+\providecolor{orange0}{HTML}{fff4e6}  
+\providecolor{orange1}{HTML}{ffe8cc}  
+\providecolor{orange2}{HTML}{ffd8a8} 
+\providecolor{orange3}{HTML}{ffc078} 
+\providecolor{orange4}{HTML}{ffa94d} 
+\providecolor{orange5}{HTML}{ff922b} 
+\providecolor{orange6}{HTML}{fd7e14} 
+\providecolor{orange7}{HTML}{f76707} 
+\providecolor{orange8}{HTML}{e8590c} 
+\providecolor{orange9}{HTML}{d9480f} 
+%    \end{macrocode}
+%%
+%
+
+%
+% \iffalse
+%</package>
+% \fi
+%
+% \Finale
+\endinput
